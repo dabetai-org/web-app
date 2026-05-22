@@ -1,57 +1,70 @@
-<a href="#en"><span id="es_wapp">ES</span></a> · <a href="#en">EN</a>
-
-# Dabetai Web App
-
-Panel web integral para que profesionales de la salud monitoreen pacientes con diabetes, visualicen datos clínicos y accedan a predicciones de riesgo basadas en inteligencia artificial.
+# dabetai — Portal Web (Profesionales de la Salud)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Angular-19-red?logo=angular" alt="Angular">
   <img src="https://img.shields.io/badge/Tailwind_CSS-4.x-blue?logo=tailwindcss" alt="Tailwind CSS">
-  <img src="https://img.shields.io/badge/TypeScript-5.x-lightblue?logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white" alt="TypeScript">
 </p>
-
-## Capturas de pantalla
 
 <p align="center">
-  <img src="./assets/screenshots/login.png" alt="Pantalla de inicio de sesión" width="200"/>
-  <img src="./assets/screenshots/dashboard.png" alt="Panel principal" width="200"/>
-  <img src="./assets/screenshots/predictions.png" alt="Predicciones de IA" width="200"/>
-  <img src="./assets/screenshots/chat.png" alt="Chat inteligente" width="200"/>
+  <em>Portal web para profesionales de la salud, con monitoreo de pacientes diabéticos, visualización de datos clínicos y predicciones de riesgo mediante IA.</em>
 </p>
 
-## ¿Qué es Dabetai Web App?
+<p align="center">
+  <a href="https://github.com/dabetai-org/web-app">Repositorio</a>
+  ·
+  <a href="https://github.com/dabetai-org/web-app/issues">Reportar Bug</a>
+  ·
+  <a href="https://chrisssp.vercel.app/assets/docs/papers/Prevenci%C3%B3n-de-Riesgos-de-la-Diabetes-Mediante-una-Plataforma-Inteligente-de-Monitorizaci%C3%B3n-y-Predicci%C3%B3n-de-Complicaciones-con-Inteligencia-Artificial.pdf">Artículo de Investigación</a>
+</p>
 
-**Dabetai Web App** es la interfaz para médicos dentro de la plataforma Dabetai, diseñada para el monitoreo y gestión de pacientes con diabetes tipo 1. Permite visualización de datos, monitoreo de glucosa en tiempo real, predicción de complicaciones mediante IA y generación de reportes clínicos.
+<p align="center">
+  <a href="README.md">🇬🇧 English</a> · <a href="README.es.md">🇪🇸 Español</a>
+</p>
 
 ---
+
+## Acerca de dabetai
+
+**dabetai** es un ecosistema preventivo integral para la diabetes que predice complicaciones como retinopatía, nefropatía, neuropatía y pie diabético antes de que sean irreversibles.
+
+Este repositorio contiene el **Portal Web** — una aplicación web para profesionales de la salud que permite:
+
+- Monitorear glucosa, actividad y datos clínicos de pacientes en tiempo real
+- Visualizar predicciones de riesgo de complicaciones generadas por IA
+- Gestionar expedientes e historial médico de pacientes
+- Generar reportes clínicos y alertas tempranas
+- Comunicarse con los pacientes a través de la plataforma
+
+### Ecosistema
+
+| Componente | Repositorio | Stack |
+|-----------|-----------|-------|
+| **App Móvil** | [dabetai-org/mobile-app](https://github.com/dabetai-org/mobile-app) | React Native 0.79, Expo 53, Tailwind CSS |
+| **Portal Web** (este) | [dabetai-org/web-app](https://github.com/dabetai-org/web-app) | Angular 19, Tailwind CSS |
+| **Core API** | [dabetai-org/api](https://github.com/dabetai-org/api) | NestJS 11, PostgreSQL, Prisma |
+| **API de IA** | [dabetai-org/ai-api](https://github.com/dabetai-org/ai-api) | FastAPI, Python 3.11, MongoDB |
+| **Modelos IA** | [dabetai-org/ai-models](https://github.com/dabetai-org/ai-models) | Python, scikit-learn, XGBoost, PyTorch |
+| **Landing** | [dabetai-org/landing](https://github.com/dabetai-org/landing) | Astro, Tailwind CSS |
 
 ## Funcionalidades
 
-- Gestión y visualización completa de pacientes
-- Monitoreo glucémico y de actividad en tiempo real
-- Alertas tempranas basadas en IA
-- Interfaz moderna y responsiva
-- Control de acceso basado en roles
-
----
-
-## Tecnologías
-
-- **Angular 19** — Framework frontend moderno
-- **TypeScript** — Código robusto con tipado estático
-- **Tailwind CSS 4.x** — Estilos utilitarios para UI rápida
-
----
+- **Gestión de Pacientes** — Expedientes completos y visualización de datos
+- **Monitoreo Glucémico** — Niveles de glucosa y actividad en tiempo real
+- **Predicciones IA** — Alertas tempranas de riesgo de complicaciones diabéticas
+- **Reportes Clínicos** — Generación y exportación de reportes
+- **Control de Acceso** — Roles de paciente, médico y administrador
+- **UI Responsiva** — Interfaz moderna con Tailwind CSS
 
 ## Inicio rápido
 
 ### Prerrequisitos
 
-- Node.js (v18+)
-- Angular CLI (v19+)
-- npm (v9+)
+- Node.js 18+
+- Angular CLI 19+: `npm install -g @angular/cli`
+- npm 9+
 
-### Pasos
+### Instalación
 
 ```bash
 git clone https://github.com/dabetai-org/web-app.git
@@ -62,40 +75,47 @@ ng serve
 
 Abrir `http://localhost:4200`
 
----
+## Arquitectura
 
-## Ecosistema
-
-| Repositorio | Propósito | Estado |
-|---|---|---|
-| [mobile-app](https://github.com/dabetai-org/mobile-app) | App para pacientes | Activo |
-| [web-app](https://github.com/dabetai-org/web-app) | App web para médicos | Activo |
-| [api](https://github.com/dabetai-org/api) | API principal del backend | Activo |
-| [ai-api](https://github.com/dabetai-org/ai-api) | API de IA y predicciones | Activo |
-| [ai-models](https://github.com/dabetai-org/ai-models) | Modelos de machine learning | Activo |
-| [landing](https://github.com/dabetai-org/landing) | Página de aterrizaje | Activo |
-
----
+```
+┌────────────────────────────────────────────────┐
+│         Web Portal (Angular 19)                │
+│  ┌─────────┐ ┌──────────┐ ┌──────────────┐   │
+│  │ Patient │ │   AI     │ │  Clinical    │   │
+│  │ Monitor │ │ Insights │ │   Reports    │   │
+│  └────┤────┘ └────┤─────┘ └──────┤────────┘   │
+│       │           │              │            │
+│  ┌────├─────────├────────────────├─────────────────┐    │
+│  │         HTTP Services (Axios)         │    │
+│  └─────────────────────────┘    │
+└───────────────────├───────────────────────────────┘
+                    │ JWT Auth
+         ┌──────────├──────────┐
+         ├                     ├
+┌──────────────┐     ┌──────────────┐
+│  Core API    │     │  AI API      │
+│  (NestJS)    │     │  (FastAPI)   │
+└──────────────┘     └──────────────┘
+```
 
 ## Contribuciones
 
-Ver [CONTRIBUTING.MD](CONTRIBUTING.MD).
+Por favor lee [CONTRIBUTING.md](CONTRIBUTING.md) para nuestras convenciones de ramas, commits y flujo de PRs.
 
----
+## Licencia
+
+Este proyecto está licenciado bajo GNU General Public License v3.0 — consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Reconocimientos
 
-Desarrollado por:
-
+**Autores:**
 - Cardenas Cabal Fermín
-- Ortiz Pérez Alejandro
-- Serrano Puertos Jorge Christian
+- Ortiz Pérez Alejandro — alex03ortizperez@gmail.com
+- Serrano Puertos Jorge Christian — christian.serrano.puertos@gmail.com
 
-Asesores:
-
+**Asesores:**
 - Guarneros Nolasco Luis Rolando
 - Cruz Ramos Nancy Aracely
 
-Apoyo académico:
-
+**Apoyo Académico:**
 - Universidad Tecnológica del Centro de Veracruz

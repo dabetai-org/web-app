@@ -1,55 +1,70 @@
-# Dabetai Web App — <span id="en">EN</span> · <a href="#es_wapp">ES</a>
-
-Comprehensive web dashboard for healthcare professionals to monitor diabetic patients, visualize clinical data, and access AI-powered risk predictions.
+# dabetai — Web Portal (Healthcare Professionals)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Angular-19-red?logo=angular" alt="Angular">
   <img src="https://img.shields.io/badge/Tailwind_CSS-4.x-blue?logo=tailwindcss" alt="Tailwind CSS">
-  <img src="https://img.shields.io/badge/TypeScript-5.x-lightblue?logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white" alt="TypeScript">
 </p>
-
-## Screenshots
 
 <p align="center">
-  <img src="./assets/screenshots/login.png" alt="Login screen" width="200"/>
-  <img src="./assets/screenshots/dashboard.png" alt="Dashboard" width="200"/>
-  <img src="./assets/screenshots/predictions.png" alt="AI predictions" width="200"/>
-  <img src="./assets/screenshots/chat.png" alt="Smart chat" width="200"/>
+  <em>Healthcare professional web portal for diabetes patient monitoring, clinical data visualization, and AI-powered risk predictions.</em>
 </p>
 
-## What is Dabetai Web App?
+<p align="center">
+  <a href="https://github.com/dabetai-org/web-app">Repository</a>
+  ·
+  <a href="https://github.com/dabetai-org/web-app/issues">Report Bug</a>
+  ·
+  <a href="https://chrisssp.vercel.app/assets/docs/papers/Prevenci%C3%B3n-de-Riesgos-de-la-Diabetes-Mediante-una-Plataforma-Inteligente-de-Monitorizaci%C3%B3n-y-Predicci%C3%B3n-de-Complicaciones-con-Inteligencia-Artificial.pdf">Research Paper</a>
+</p>
 
-**Dabetai Web App** is the healthcare professional interface of the Dabetai platform, designed for monitoring and managing type 1 diabetes patients. It enables data visualization, real-time glucose monitoring, AI-based complication prediction, and clinical reporting.
+<p align="center">
+  <a href="README.md">🇬🇧 English</a> · <a href="README.es.md">🇪🇸 Español</a>
+</p>
 
 ---
+
+## About dabetai
+
+**dabetai** is a comprehensive preventive ecosystem for diabetes that predicts complications like retinopathy, nephropathy, neuropathy, and diabetic foot before they become irreversible.
+
+This repository contains the **Web Portal** — a web application for healthcare professionals to:
+
+- Monitor patient glucose levels, activity, and clinical data in real time
+- Visualize AI-powered risk predictions for diabetes complications
+- Manage patient records and medical history
+- Access clinical reports and early warning alerts
+- Communicate with patients through the platform
+
+### Ecosystem
+
+| Component | Repository | Stack |
+|-----------|-----------|-------|
+| **Mobile App** | [dabetai-org/mobile-app](https://github.com/dabetai-org/mobile-app) | React Native 0.79, Expo 53, Tailwind CSS |
+| **Web Portal** (this) | [dabetai-org/web-app](https://github.com/dabetai-org/web-app) | Angular 19, Tailwind CSS |
+| **Core API** | [dabetai-org/api](https://github.com/dabetai-org/api) | NestJS 11, PostgreSQL, Prisma |
+| **AI Inference API** | [dabetai-org/ai-api](https://github.com/dabetai-org/ai-api) | FastAPI, Python 3.11, MongoDB |
+| **AI Models** | [dabetai-org/ai-models](https://github.com/dabetai-org/ai-models) | Python, scikit-learn, XGBoost, PyTorch |
+| **Landing** | [dabetai-org/landing](https://github.com/dabetai-org/landing) | Astro, Tailwind CSS |
 
 ## Features
 
-- Patient management and data visualization
-- Real-time glycemic monitoring and activity tracking
-- AI-powered early alerts and notifications
-- Modern responsive UI
-- Role-based access control
-
----
-
-## Tech Stack
-
-- **Angular 19** — Modern frontend framework
-- **TypeScript** — Type-safe codebase
-- **Tailwind CSS 4.x** — Utility-first CSS
-
----
+- **Patient Management** — Comprehensive patient records and data visualization
+- **Glycemic Monitoring** — Real-time glucose levels and activity tracking
+- **AI Predictions** — Early risk alerts for diabetic complications
+- **Clinical Reports** — Generate and export patient reports
+- **Role-Based Access** — Secure login with patient, doctor, and admin roles
+- **Responsive UI** — Modern interface built with Tailwind CSS
 
 ## Quick Start
 
 ### Prerequisites
 
-- Node.js (v18+)
-- Angular CLI (v19+)
-- npm (v9+)
+- Node.js 18+
+- Angular CLI 19+: `npm install -g @angular/cli`
+- npm 9+
 
-### Steps
+### Setup
 
 ```bash
 git clone https://github.com/dabetai-org/web-app.git
@@ -60,40 +75,47 @@ ng serve
 
 Open `http://localhost:4200`
 
----
+## Architecture
 
-## Ecosystem
-
-| Repository | Purpose | Status |
-|---|---|---|
-| [mobile-app](https://github.com/dabetai-org/mobile-app) | Patient mobile app | Active |
-| [web-app](https://github.com/dabetai-org/web-app) | Doctor web app | Active |
-| [api](https://github.com/dabetai-org/api) | Main backend API | Active |
-| [ai-api](https://github.com/dabetai-org/ai-api) | AI prediction API | Active |
-| [ai-models](https://github.com/dabetai-org/ai-models) | ML models | Active |
-| [landing](https://github.com/dabetai-org/landing) | Landing page | Active |
-
----
+```
+┌────────────────────────────────────────────────┐
+│         Web Portal (Angular 19)                │
+│  ┌─────────┐ ┌──────────┐ ┌──────────────┐   │
+│  │ Patient │ │   AI     │ │  Clinical    │   │
+│  │ Monitor │ │ Insights │ │   Reports    │   │
+│  └────┤────┘ └────┤─────┘ └──────┤────────┘   │
+│       │           │              │            │
+│  ┌────├─────────├────────────────├─────────────────┐    │
+│  │         HTTP Services (Axios)         │    │
+│  └─────────────────────────┘    │
+└───────────────────├───────────────────────────────┘
+                    │ JWT Auth
+         ┌──────────├──────────┐
+         ├                     ├
+┌──────────────┐     ┌──────────────┐
+│  Core API    │     │  AI API      │
+│  (NestJS)    │     │  (FastAPI)   │
+└──────────────┘     └──────────────┘
+```
 
 ## Contributing
 
-See [CONTRIBUTING.MD](CONTRIBUTING.MD).
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for branch naming, commit conventions, and PR workflow.
 
----
+## License
+
+This project is licensed under the GNU General Public License v3.0 — see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
-Developed by:
-
+**Authors:**
 - Cardenas Cabal Fermín
-- Ortiz Pérez Alejandro
-- Serrano Puertos Jorge Christian
+- Ortiz Pérez Alejandro — alex03ortizperez@gmail.com
+- Serrano Puertos Jorge Christian — christian.serrano.puertos@gmail.com
 
-Advisors:
-
+**Advisors:**
 - Guarneros Nolasco Luis Rolando
 - Cruz Ramos Nancy Aracely
 
-Academic support:
-
+**Academic Support:**
 - Universidad Tecnológica del Centro de Veracruz
