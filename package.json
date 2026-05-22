@@ -1,5 +1,5 @@
 {
-  "name": "diabetes-control-riesgos",
+  "name": "dabetai-web-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -19,7 +19,6 @@
     "@angular/router": "^19.2.0",
     "@tailwindcss/postcss": "^4.0.14",
     "apexcharts": "^3.46.0",
-    "diabetes-control-riesgos": "file:",
     "flowbite": "^3.1.2",
     "postcss": "^8.5.3",
     "rxjs": "~7.8.0",
